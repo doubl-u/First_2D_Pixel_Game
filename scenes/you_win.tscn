@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4uvgi6b22y6q"]
+[gd_scene load_steps=8 format=3 uid="uid://b4uvgi6b22y6q"]
 
 [ext_resource type="Script" path="res://scripts/you_win.gd" id="1_6kcdi"]
 [ext_resource type="FontFile" uid="uid://d2hvnek3wgb8n" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_p6xdy"]
+[ext_resource type="AudioStream" uid="uid://dxukrlcjepwat" path="res://assets/sounds/mouse_click.wav" id="3_43t7r"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg555"]
 bg_color = Color(0.292344, 0.566183, 0.604075, 1)
@@ -26,6 +27,10 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y0ysd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2uml"]
 
 [node name="YouWin" type="Control"]
 layout_mode = 3
@@ -73,6 +78,17 @@ theme_override_fonts/font = ExtResource("1_p6xdy")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_wg555")
 theme_override_styles/hover = SubResource("StyleBoxFlat_27jmw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_y0ysd")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t2uml")
 text = "MAIN MENU"
 
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_43t7r")
+attenuation = 1.07177
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

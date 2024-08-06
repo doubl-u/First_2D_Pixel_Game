@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://dka8pj8fljh52"]
+[gd_scene load_steps=55 format=3 uid="uid://dka8pj8fljh52"]
 
 [ext_resource type="Script" path="res://scripts/title_menu.gd" id="1_kiahf"]
 [ext_resource type="FontFile" uid="uid://d2hvnek3wgb8n" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_v63bd"]
@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dhiiudpdr2ige" path="res://assets/sprites/Keyboard Extras.png" id="4_rpaoa"]
 [ext_resource type="Texture2D" uid="uid://dddiw2m6qaqj3" path="res://assets/sprites/slime_green.png" id="5_3uss2"]
 [ext_resource type="Texture2D" uid="uid://ornrtovbfvif" path="res://assets/sprites/coin.png" id="6_c5gpq"]
-[ext_resource type="Texture2D" uid="uid://lyijdurcobng" path="res://assets/UI/cog_silver.png" id="8_i2i6t"]
+[ext_resource type="Theme" uid="uid://bugp7t3ntlrhx" path="res://theme/custom_settings_button.tres" id="9_ao1vi"]
 [ext_resource type="Texture2D" uid="uid://bf78apxjwfoke" path="res://assets/Keyboard Slash.png" id="9_eljt2"]
+[ext_resource type="AudioStream" uid="uid://dxukrlcjepwat" path="res://assets/sounds/mouse_click.wav" id="10_of1me"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_toblh"]
 bg_color = Color(0.2, 0.360784, 0.709804, 0.831373)
@@ -535,6 +536,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rfh8c")
 text = "PLAY!"
 script = SubResource("GDScript_x0u1m")
 
+[node name="PlayTimer" type="Timer" parent="Play"]
+wait_time = 0.2
+
 [node name="Quit" type="Button" parent="."]
 layout_mode = 0
 offset_left = 448.0
@@ -548,18 +552,28 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_rfh8c")
 text = "QUIT!"
 script = SubResource("GDScript_x0u1m")
 
+[node name="QuitTimer" type="Timer" parent="Quit"]
+wait_time = 0.2
+
 [node name="SettingsButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 544.0
 offset_top = 560.0
 offset_right = 608.0
 offset_bottom = 624.0
-flat = true
+theme = ExtResource("9_ao1vi")
 
-[node name="CogSilver" type="Sprite2D" parent="SettingsButton"]
-position = Vector2(32, 32)
-texture = ExtResource("8_i2i6t")
+[node name="SettingsTimer" type="Timer" parent="SettingsButton"]
+wait_time = 0.2
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_of1me")
+attenuation = 1.07177
+bus = &"SFX"
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="timeout" from="Play/PlayTimer" to="." method="_on_play_timer_timeout"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Quit/QuitTimer" to="." method="_on_quit_timer_timeout"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="timeout" from="SettingsButton/SettingsTimer" to="." method="_on_settings_timer_timeout"]

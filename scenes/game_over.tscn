@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpkagefdu0v3n"]
+[gd_scene load_steps=8 format=3 uid="uid://cpkagefdu0v3n"]
 
 [ext_resource type="Script" path="res://scripts/game_over.gd" id="1_b7ji1"]
 [ext_resource type="FontFile" uid="uid://d2hvnek3wgb8n" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_ficqp"]
+[ext_resource type="Theme" uid="uid://s3po41qesqw1" path="res://theme/custom_retry_button.tres" id="3_llky8"]
+[ext_resource type="Theme" uid="uid://bugp7t3ntlrhx" path="res://theme/custom_settings_button.tres" id="4_w2tff"]
+[ext_resource type="AudioStream" uid="uid://dxukrlcjepwat" path="res://assets/sounds/mouse_click.wav" id="5_7tiw7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oau0"]
 bg_color = Color(0.579192, 0, 0.00693607, 1)
@@ -70,4 +73,40 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_3oau0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_aw5lq")
 text = "MAIN MENU"
 
+[node name="MenuTimer" type="Timer" parent="MainMenuButton"]
+wait_time = 0.2
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 544.0
+offset_right = 544.0
+offset_bottom = 608.0
+pivot_offset = Vector2(32, 32)
+theme = ExtResource("3_llky8")
+
+[node name="RetryTimer" type="Timer" parent="RetryButton"]
+wait_time = 0.2
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 544.0
+offset_right = 672.0
+offset_bottom = 608.0
+theme = ExtResource("4_w2tff")
+
+[node name="SettingsTimer" type="Timer" parent="SettingsButton"]
+wait_time = 0.2
+
+[node name="Click" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_7tiw7")
+attenuation = 1.07177
+bus = &"SFX"
+
 [connection signal="pressed" from="MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="timeout" from="MainMenuButton/MenuTimer" to="." method="_on_menu_timer_timeout"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
+[connection signal="timeout" from="RetryButton/RetryTimer" to="." method="_on_retry_timer_timeout"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="timeout" from="SettingsButton/SettingsTimer" to="." method="_on_settings_timer_timeout"]

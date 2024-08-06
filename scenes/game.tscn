@@ -755,7 +755,13 @@ position = Vector2(1240, -39)
 position = Vector2(1368, -50)
 
 [node name="Slime" parent="." instance=ExtResource("6_gtdu3")]
-position = Vector2(600, 36)
+position = Vector2(919, 4)
+
+[node name="Slime2" parent="." instance=ExtResource("6_gtdu3")]
+position = Vector2(56, 36)
+
+[node name="Slime3" parent="." instance=ExtResource("6_gtdu3")]
+position = Vector2(648, 36)
 
 [node name="Lables" type="Node" parent="."]
 
