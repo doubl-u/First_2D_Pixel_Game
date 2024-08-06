@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4uvgi6b22y6q"]
+
+[ext_resource type="Script" path="res://scripts/you_win.gd" id="1_6kcdi"]
+[ext_resource type="FontFile" uid="uid://d2hvnek3wgb8n" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_p6xdy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg555"]
+bg_color = Color(0.292344, 0.566183, 0.604075, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27jmw"]
+bg_color = Color(0.210923, 0.432084, 0.463924, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="YouWin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6kcdi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0980392, 0.313726, 0.752941, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 1088.0
+offset_bottom = 307.0
+theme_override_colors/font_color = Color(0.398033, 0.726248, 0.772174, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("1_p6xdy")
+theme_override_font_sizes/font_size = 64
+text = "	CONGRATULATIONS!
+
+	YOU WIN!!🎉"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="MainMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 416.0
+offset_top = 392.0
+offset_right = 720.0
+offset_bottom = 456.0
+theme_override_fonts/font = ExtResource("1_p6xdy")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_wg555")
+theme_override_styles/hover = SubResource("StyleBoxFlat_27jmw")
+text = "MAIN MENU"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]

@@ -1,0 +1,151 @@
+[gd_scene load_steps=4 format=3 uid="uid://btk54y7ueeeav"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_gxiyn"]
+[ext_resource type="FontFile" uid="uid://d2hvnek3wgb8n" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="3_1vf1i"]
+[ext_resource type="Theme" uid="uid://r3kx0wvv1b87" path="res://theme/custom_button.tres" id="3_cp22h"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gxiyn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.0823529, 0.207843, 0.396078, 1)
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 35.0
+offset_right = 126.0
+offset_bottom = 87.0
+theme = ExtResource("3_cp22h")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 128.0
+offset_right = 824.0
+offset_bottom = 192.0
+theme_override_colors/font_color = Color(0.359332, 0.557774, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(4.21144e-08, 0.0384916, 0.166273, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 6
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("3_1vf1i")
+theme_override_font_sizes/font_size = 64
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Master" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 256.0
+offset_right = 768.0
+offset_bottom = 320.0
+max_value = 1.0
+step = 0.001
+
+[node name="MasterLevel" type="Label" parent="Master"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 483.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_1vf1i")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Master"]
+layout_mode = 0
+offset_left = -168.0
+offset_top = 24.0
+offset_right = -21.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_1vf1i")
+theme_override_font_sizes/font_size = 24
+text = "MASTER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Music" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 320.0
+offset_right = 768.0
+offset_bottom = 384.0
+max_value = 1.0
+step = 0.001
+
+[node name="MusicLevel" type="Label" parent="Music"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 483.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_1vf1i")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Music"]
+layout_mode = 0
+offset_left = -152.0
+offset_top = 24.0
+offset_right = -35.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_1vf1i")
+theme_override_font_sizes/font_size = 24
+text = "MUSIC"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 384.0
+offset_right = 768.0
+offset_bottom = 448.0
+max_value = 1.0
+step = 0.001
+
+[node name="SFXLevel" type="Label" parent="SFX"]
+layout_mode = 0
+offset_left = 384.0
+offset_top = 16.0
+offset_right = 483.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_1vf1i")
+theme_override_font_sizes/font_size = 32
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="SFX"]
+layout_mode = 0
+offset_left = -152.0
+offset_top = 24.0
+offset_right = -35.0
+offset_bottom = 48.0
+theme_override_fonts/font = ExtResource("3_1vf1i")
+theme_override_font_sizes/font_size = 24
+text = "SFX
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Master" to="." method="_on_master_value_changed"]
+[connection signal="value_changed" from="Music" to="." method="_on_music_value_changed"]
+[connection signal="value_changed" from="SFX" to="." method="_on_sfx_value_changed"]
