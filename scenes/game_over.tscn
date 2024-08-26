@@ -6,24 +6,24 @@
 [ext_resource type="Theme" uid="uid://bugp7t3ntlrhx" path="res://theme/custom_settings_button.tres" id="4_w2tff"]
 [ext_resource type="AudioStream" uid="uid://dxukrlcjepwat" path="res://assets/sounds/mouse_click.wav" id="5_7tiw7"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oau0"]
-bg_color = Color(0.579192, 0, 0.00693607, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0.705882, 0.396078, 0.121569, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aw5lq"]
 bg_color = Color(0.468151, 1.77482e-06, 0.0049199, 1)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
+border_color = Color(0.705882, 0.396078, 0.121569, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3oau0"]
+bg_color = Color(0.579192, 0, 0.00693607, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
 border_color = Color(0.705882, 0.396078, 0.121569, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
@@ -69,8 +69,8 @@ offset_right = 728.0
 offset_bottom = 512.0
 theme_override_fonts/font = ExtResource("1_ficqp")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_3oau0")
 theme_override_styles/hover = SubResource("StyleBoxFlat_aw5lq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3oau0")
 text = "MAIN MENU"
 
 [node name="MenuTimer" type="Timer" parent="MainMenuButton"]

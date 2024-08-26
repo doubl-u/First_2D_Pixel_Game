@@ -305,15 +305,15 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a8i7"]
-bg_color = Color(0.0627451, 0.117647, 0.2, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfh8c"]
+bg_color = Color(0.045875, 0.0929999, 0.163687, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rfh8c"]
-bg_color = Color(0.045875, 0.0929999, 0.163687, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0a8i7"]
+bg_color = Color(0.0627451, 0.117647, 0.2, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -531,8 +531,8 @@ offset_right = 704.0
 offset_bottom = 376.0
 theme_override_fonts/font = ExtResource("1_v63bd")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_0a8i7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rfh8c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0a8i7")
 text = "PLAY!"
 script = SubResource("GDScript_x0u1m")
 
@@ -547,8 +547,8 @@ offset_right = 704.0
 offset_bottom = 538.0
 theme_override_fonts/font = ExtResource("1_v63bd")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_0a8i7")
 theme_override_styles/hover = SubResource("StyleBoxFlat_rfh8c")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0a8i7")
 text = "QUIT!"
 script = SubResource("GDScript_x0u1m")
 
