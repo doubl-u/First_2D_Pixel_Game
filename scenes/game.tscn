@@ -708,7 +708,7 @@ libraries = {
 autoplay = "move"
 
 [node name="Killzone" parent="." instance=ExtResource("5_etqea")]
-position = Vector2(95, 114)
+position = Vector2(96, 114)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_x0vb7")
