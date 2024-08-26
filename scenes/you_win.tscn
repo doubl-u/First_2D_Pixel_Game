@@ -4,17 +4,7 @@
 [ext_resource type="FontFile" uid="uid://d2hvnek3wgb8n" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="1_p6xdy"]
 [ext_resource type="AudioStream" uid="uid://dxukrlcjepwat" path="res://assets/sounds/mouse_click.wav" id="3_43t7r"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg555"]
-bg_color = Color(0.292344, 0.566183, 0.604075, 1)
-border_width_left = 6
-border_width_top = 6
-border_width_right = 6
-border_width_bottom = 6
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2uml"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27jmw"]
 bg_color = Color(0.210923, 0.432084, 0.463924, 1)
@@ -30,7 +20,17 @@ corner_radius_bottom_left = 20
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y0ysd"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t2uml"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wg555"]
+bg_color = Color(0.292344, 0.566183, 0.604075, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="YouWin" type="Control"]
 layout_mode = 3
@@ -76,10 +76,10 @@ offset_right = 720.0
 offset_bottom = 456.0
 theme_override_fonts/font = ExtResource("1_p6xdy")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_wg555")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t2uml")
 theme_override_styles/hover = SubResource("StyleBoxFlat_27jmw")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_y0ysd")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_t2uml")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wg555")
 text = "MAIN MENU"
 
 [node name="Click" type="AudioStreamPlayer2D" parent="."]

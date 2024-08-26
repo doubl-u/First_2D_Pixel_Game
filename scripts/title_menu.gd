@@ -31,8 +31,3 @@ func _on_settings_button_pressed():
 
 func _on_settings_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/settings.tscn")
-
-
-
-
-
