@@ -47,7 +47,3 @@ func _on_sfx_value_changed(value):
 	sfx_volume = int(value * 100)
 	sfx_level.text = str(sfx_volume)
 	AudioServer.set_bus_volume_db(sfx,linear_to_db(value))
-
-
-
-

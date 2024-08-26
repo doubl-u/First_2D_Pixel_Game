@@ -32,6 +32,3 @@ func _on_retry_button_pressed():
 
 func _on_retry_timer_timeout():
 	get_tree().change_scene_to_file("res://scenes/game.tscn")
-
-
-
